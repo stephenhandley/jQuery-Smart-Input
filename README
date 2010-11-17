@@ -1,0 +1,2 @@
+make text inputs smarter, allowing for prompts on focus and blur, regex format checking, specifiable via html data attributes
+
