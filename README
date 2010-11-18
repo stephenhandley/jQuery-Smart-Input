@@ -1,2 +1,14 @@
 make text inputs smarter, allowing for prompts on focus and blur, regex format checking, specifiable via html data attributes
 
+use like this:
+html:
+<input type="text" name="email" data-prompt-blur="your email address" data-regex=".+@.+\.[A-Z]{2,4}" />
+<input type="text" name="url" data-prompt-blur="your website url (optional)", data-prompt-focus="http://" data-regex="http:\/\/.+\.[A-Z]{2,4}" />
+
+js:
+$('input[type=text]').smartInput(); #init!
+$('input[name=email]').smartInput('hasData'); # checks if something other than the prompts is entered; returns a boolean if the collection has a single element, otherwise array of booleans
+$('input[name=email]').smartInput('isValid'); # returns true if the regex matches.. same collection / single deal as hasData
+$('input[name=email]').smartInput('reset'); # resets the input to its blur prompt value 
+
+
